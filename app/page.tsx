@@ -1,4 +1,4 @@
-import { Hero } from "@/components/hero";
+import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 import { Container } from "@/components/container";
 
 export default function Home() {
@@ -9,10 +9,17 @@ export default function Home() {
       </header>
       <main>
         <Container>
-          <Hero
-            title="Linears is the better way to buid products"
-            subtitle="Meet the new standard for modern software development. Streamline issues, sprints, and product roadmaps."
-          />
+          <Hero>
+            <HeroTitle>
+              Linears is the better way
+              <br /> to buid products
+            </HeroTitle>
+            <HeroSubtitle>
+              Meet the new standard for modern software development.
+              <br /> Streamline issues, sprints, and product roadmaps.
+            </HeroSubtitle>
+            <img src="/img/hero.webp" alt="Hero image" />
+          </Hero>
         </Container>
       </main>
       <footer>
