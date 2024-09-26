@@ -17,10 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className={`antialiased`}>
         <div className="">
           <Header />
-          <main className="pt-[var(--nav-height)]">{children} </main>
+          <main className="pt-nav-height">{children} </main>
           <footer>
             <Container>Footer</Container>
           </footer>
