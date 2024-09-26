@@ -7,19 +7,34 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {
   href: string;
 }
 
-const buttonVariants = cva("", {
+const buttonVariants = cva("rounded-full inline-flex items-center", {
   variants: {
     varient: {
-      primary: "bg-white text-black",
-      secondary: "bg-black text-white",
-      tertiary: "bg-transparent text-white"
+      primary: "bg-primary-gradient hover:text-shadow hover:shadow-primary",
+      secondary: "",
+      tertiary: ""
+    },
+    size: {
+      small: "text-xs px-3 h-7",
+      medium: "text-sm px-4 h-8",
+      large: "text-md px-6 h-12"
     }
+  },
+  defaultVariants: {
+    varient: "primary",
+    size: "medium"
   }
 });
 
-export const Button = ({ children, className, href, varient }: ButtonProps) => {
+export const Button = ({
+  children,
+  className,
+  href,
+  varient,
+  size
+}: ButtonProps) => {
   return (
-    <Link href={href} className={buttonVariants({ varient })}>
+    <Link href={href} className={buttonVariants({ varient, size })}>
       {children}
     </Link>
   );
