@@ -50,7 +50,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="mt-12 border-t border-white-a08 py-[5.6rem] text-sm">
+    <footer className="border-transparent-white mt-12 border-t py-[5.6rem] text-md">
       <Container className="flex flex-col justify-between lg:flex-row">
         <div>
           <div className="flex h-full flex-row justify-between lg:flex-col">

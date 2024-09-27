@@ -11,11 +11,11 @@ interface HeroSubtitleProps {
 }
 
 export const HeroTitle = ({ children }: HeroTitleProps) => {
-  return <h1 className="my-6 text-5xl">{children}</h1>;
+  return <h1 className="md:text-8xl text-6xl my-6">{children}</h1>;
 };
 
 export const HeroSubtitle = ({ children }: HeroSubtitleProps) => {
-  return <p className="mb-12 text-lg">{children}</p>;
+  return <p className="md:text-xl mb-12 text-lg">{children}</p>;
 };
 
 export const Hero = ({ children }: HeroProps) => {

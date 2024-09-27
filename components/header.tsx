@@ -67,9 +67,9 @@ export const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed left-0 top-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
+    <header className="border-transparent-white fixed left-0 top-0 w-full border-b backdrop-blur-[12px]">
       <Container className="flex h-nav-height">
-        <Link className="flex items-center text-md" href="/">
+        <Link className="flex items-center text-lg" href="/">
           <Logo className="mr-4 size-[1.8rem]" />
           Lienar
         </Link>
@@ -89,12 +89,12 @@ export const Header = () => {
             )}
           >
             <ul className="flex h-full flex-col md:flex-row md:items-center">
-              {/* <ul className="flex items-center h-full [&_a]:text-sm [&_a:hover]:text-grey [&_a]:transition-colors [&_li]:ml-6"> */}
+              {/* <ul className="flex items-center h-full [&_a]:text-md [&_a:hover]:text-grey [&_a]:transition-colors [&_li]:ml-6"> */}
               {links.map((link, index) => (
                 <li
                   key={index}
                   className={classNames(
-                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-md duration-300 ease-in md:translate-y-0 md:border-none md:text-sm md:transition-colors",
+                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-lg duration-300 ease-in md:translate-y-0 md:border-none md:text-md md:transition-colors",
                     link.defaultClass,
                     isMenuOpen && "translate-y-0",
                   )}
@@ -107,7 +107,7 @@ export const Header = () => {
         </div>
 
         <div className="ml-auto flex h-full items-center">
-          <Link href="/#" className="mr-6 text-sm">
+          <Link href="/#" className="mr-6 text-md">
             Log in
           </Link>
           <Button href="/#">Sign up</Button>

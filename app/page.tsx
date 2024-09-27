@@ -7,11 +7,12 @@ export default function Home() {
       <Hero>
         <HeroTitle>
           Linears is the better way
-          <br /> to buid products
+          <br className="hidden md:block" /> to buid products
         </HeroTitle>
         <HeroSubtitle>
           Meet the new standard for modern software development.
-          <br /> Streamline issues, sprints, and product roadmaps.
+          <br className="hidden md:block" /> Streamline issues, sprints, and
+          product roadmaps.
         </HeroSubtitle>
         <img src="/img/hero.webp" alt="Hero image" />
       </Hero>
