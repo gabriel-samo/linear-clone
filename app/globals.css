@@ -25,6 +25,6 @@
       rgba(255, 255, 255, 0.38)
     );
     background-clip: text;
-    /* color: transparent; */
+    color: transparent;
   }
 }
