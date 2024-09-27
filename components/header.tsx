@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/button";
 import { Logo } from "@/components/icons/logo";
@@ -46,6 +46,26 @@ const links = [
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) {
+      html.classList.toggle("overflow-hidden", isMenuOpen);
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const closeMenu = () => {
+      setIsMenuOpen(false);
+    };
+    window.addEventListener("orientationchange", closeMenu);
+    window.addEventListener("resize", closeMenu);
+
+    return () => {
+      window.removeEventListener("orientationchange", closeMenu);
+      window.removeEventListener("resize", closeMenu);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="fixed left-0 top-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
       <Container className="flex h-nav-height">
@@ -62,8 +82,10 @@ export const Header = () => {
         >
           <nav
             className={classNames(
-              "fixed left-0 top-nav-height h-[calc(100vh_-_var(--nav-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100",
-              isMenuOpen ? "opacity-100" : "opacity-0",
+              "fixed left-0 top-nav-height h-[calc(100vh_-_var(--nav-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:bg-transparent md:opacity-100 md:transition-none",
+              isMenuOpen
+                ? "translate-x-0 opacity-100"
+                : "translate-x-[-100vw] opacity-0",
             )}
           >
             <ul className="flex h-full flex-col md:flex-row md:items-center">
@@ -72,7 +94,7 @@ export const Header = () => {
                 <li
                   key={index}
                   className={classNames(
-                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-md duration-300 ease-in md:translate-y-0 md:border-none md:text-sm",
+                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-md duration-300 ease-in md:translate-y-0 md:border-none md:text-sm md:transition-colors",
                     link.defaultClass,
                     isMenuOpen && "translate-y-0",
                   )}
