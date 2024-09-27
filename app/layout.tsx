@@ -2,16 +2,17 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 
 export const metadata: Metadata = {
   title: "Linear Clone",
   description:
-    "Linear Clone built with Next.js and TailwindCSS by Gabriel Samoylov"
+    "Linear Clone built with Next.js and TailwindCSS by Gabriel Samoylov",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -24,9 +25,7 @@ export default function RootLayout({
         <div className="">
           <Header />
           <main className="pt-nav-height">{children} </main>
-          <footer>
-            <Container>Footer</Container>
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>

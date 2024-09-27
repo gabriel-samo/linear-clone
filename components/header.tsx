@@ -12,69 +12,69 @@ import { HamburgerIcon } from "@/components/icons/hamburger";
 const links = [
   {
     name: "Features",
-    href: "#"
+    href: "#",
   },
   {
     name: "Method",
-    href: "#"
+    href: "#",
   },
   {
     name: "Customers",
     href: "#",
-    defaultClass: "md:hidden lg:flex"
+    defaultClass: "md:hidden lg:flex",
   },
   {
     name: "Changelog",
     href: "#",
-    defaultClass: "md:hidden lg:flex"
+    defaultClass: "md:hidden lg:flex",
   },
   {
     name: "Integrations",
     href: "#",
-    defaultClass: "md:hidden lg:flex"
+    defaultClass: "md:hidden lg:flex",
   },
   {
     name: "Pricing",
-    href: "#"
+    href: "#",
   },
   {
     name: "Company",
-    href: "#"
-  }
+    href: "#",
+  },
 ];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
+    <header className="fixed left-0 top-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
       <Container className="flex h-nav-height">
         <Link className="flex items-center text-md" href="/">
-          <Logo className="size-[1.8rem] mr-4" />
+          <Logo className="mr-4 size-[1.8rem]" />
           Lienar
         </Link>
 
         <div
           className={classNames(
             "transition-[visibility] md:visible",
-            isMenuOpen ? "visible" : "invisible delay-500"
+            isMenuOpen ? "visible" : "invisible delay-500",
           )}
         >
           <nav
             className={classNames(
-              "h-[calc(100vh_-_var(--nav-height))] md:block fixed md:relative top-nav-height md:top-0 md:h-auto md:w-auto left-0 w-full overflow-auto bg-background md:bg-transparent md:opacity-100 transition-opacity duration-500",
-              isMenuOpen ? "opacity-100" : "opacity-0"
+              "fixed left-0 top-nav-height h-[calc(100vh_-_var(--nav-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100",
+              isMenuOpen ? "opacity-100" : "opacity-0",
             )}
           >
-            <ul className="flex h-full flex-col md:flex-row md:items-center ">
-              {/* <ul className="flex items-center h-full [&_a]:text-sm [&_a:hover]:text-gray [&_a]:transition-colors [&_li]:ml-6"> */}
+            <ul className="flex h-full flex-col md:flex-row md:items-center">
+              {/* <ul className="flex items-center h-full [&_a]:text-sm [&_a:hover]:text-grey [&_a]:transition-colors [&_li]:ml-6"> */}
               {links.map((link, index) => (
                 <li
                   key={index}
                   className={classNames(
-                    "text-md md:text-sm ml-6 hover:text-gray transition-[color, transform] w-full min-h-nav-height flex items-center border-b border-gray-dark md:border-none translate-y-8 md:translate-y-0 duration-300 ease-in",
+                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-md duration-300 ease-in md:translate-y-0 md:border-none md:text-sm",
                     link.defaultClass,
-                    isMenuOpen && "translate-y-0"
+                    isMenuOpen && "translate-y-0",
                   )}
                 >
                   <Link href={link.href}>{link.name}</Link>
@@ -84,15 +84,15 @@ export const Header = () => {
           </nav>
         </div>
 
-        <div className="ml-auto h-full flex items-center">
-          <Link href="/#" className="text-sm mr-6">
+        <div className="ml-auto flex h-full items-center">
+          <Link href="/#" className="mr-6 text-sm">
             Log in
           </Link>
           <Button href="/#">Sign up</Button>
         </div>
 
         <button
-          className="md:hidden ml-6"
+          className="ml-6 md:hidden"
           onClick={() => setIsMenuOpen((open) => !open)}
         >
           <span className="sr-only">Toggle menu</span>

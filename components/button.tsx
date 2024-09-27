@@ -12,18 +12,18 @@ const buttonVariants = cva("rounded-full inline-flex items-center", {
     varient: {
       primary: "bg-primary-gradient hover:text-shadow hover:shadow-primary",
       secondary: "",
-      tertiary: ""
+      tertiary: "",
     },
     size: {
       small: "text-xs px-3 h-7",
       medium: "text-sm px-4 h-8",
-      large: "text-md px-6 h-12"
-    }
+      large: "text-md px-6 h-12",
+    },
   },
   defaultVariants: {
     varient: "primary",
-    size: "medium"
-  }
+    size: "medium",
+  },
 });
 
 export const Button = ({
@@ -31,7 +31,7 @@ export const Button = ({
   className,
   href,
   varient,
-  size
+  size,
 }: ButtonProps) => {
   return (
     <Link href={href} className={buttonVariants({ varient, size })}>
