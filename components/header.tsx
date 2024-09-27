@@ -54,27 +54,35 @@ export const Header = () => {
           Lienar
         </Link>
 
-        <nav
+        <div
           className={classNames(
-            "h-[calc(100vh_-_var(--nav-height))] md:block fixed md:relative top-nav-height md:top-0 md:h-auto md:w-auto left-0 w-full overflow-auto bg-background md:bg-transparent",
-            isMenuOpen ? "" : "hidden"
+            "transition-[visibility] md:visible",
+            isMenuOpen ? "visible" : "invisible delay-500"
           )}
         >
-          <ul className="flex h-full flex-col md:flex-row md:items-center">
-            {/* <ul className="flex items-center h-full [&_a]:text-sm [&_a:hover]:text-gray [&_a]:transition-colors [&_li]:ml-6"> */}
-            {links.map((link, index) => (
-              <li
-                key={index}
-                className={classNames(
-                  "text-md md:text-sm ml-6 hover:text-gray transition-colors w-full min-h-nav-height flex items-center border-b border-gray-dark md:border-none",
-                  link.defaultClass
-                )}
-              >
-                <Link href={link.href}>{link.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav
+            className={classNames(
+              "h-[calc(100vh_-_var(--nav-height))] md:block fixed md:relative top-nav-height md:top-0 md:h-auto md:w-auto left-0 w-full overflow-auto bg-background md:bg-transparent md:opacity-100 transition-opacity duration-500",
+              isMenuOpen ? "opacity-100" : "opacity-0"
+            )}
+          >
+            <ul className="flex h-full flex-col md:flex-row md:items-center ">
+              {/* <ul className="flex items-center h-full [&_a]:text-sm [&_a:hover]:text-gray [&_a]:transition-colors [&_li]:ml-6"> */}
+              {links.map((link, index) => (
+                <li
+                  key={index}
+                  className={classNames(
+                    "text-md md:text-sm ml-6 hover:text-gray transition-[color, transform] w-full min-h-nav-height flex items-center border-b border-gray-dark md:border-none translate-y-8 md:translate-y-0 duration-300 ease-in",
+                    link.defaultClass,
+                    isMenuOpen && "translate-y-0"
+                  )}
+                >
+                  <Link href={link.href}>{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
         <div className="ml-auto h-full flex items-center">
           <Link href="/#" className="text-sm mr-6">
