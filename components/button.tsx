@@ -44,7 +44,7 @@ export const Button = ({
   size,
 }: ButtonProps) => {
   return (
-    <Link href={href} className={buttonVariants({ varient, size })}>
+    <Link href={href} className={buttonVariants({ varient, size, className })}>
       {children}
     </Link>
   );
