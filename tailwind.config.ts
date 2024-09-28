@@ -97,11 +97,18 @@ const config: Config = {
           opacity: "0.2",
         },
       },
+      "sketch-lines": {
+        "0%": { strokeDashoffset: "1" },
+        "50%": { strokeDashoffset: "0" },
+        "99%": { strokeDashoffset: "0" },
+        "100%": { visibility: "hidden" },
+      },
     },
     animation: {
       "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
       "image-rotate": "image-rotate 1400ms ease forwards",
       "image-glow": "image-glow 4100ms 600ms ease-out forwards",
+      "sketch-lines": "sketch-lines 1200ms ease-out forwards",
     },
   },
   plugins: [],
