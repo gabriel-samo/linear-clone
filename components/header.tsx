@@ -67,7 +67,7 @@ export const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-transparent-white fixed left-0 top-0 w-full border-b backdrop-blur-[12px]">
+    <header className="fixed left-0 top-0 z-10 w-full border-b border-transparent-white backdrop-blur-[12px]">
       <Container className="flex h-nav-height">
         <Link className="flex items-center text-lg" href="/">
           <Logo className="mr-4 size-[1.8rem]" />
@@ -94,7 +94,7 @@ export const Header = () => {
                 <li
                   key={index}
                   className={classNames(
-                    "transition-[color, transform] border-grey-dark hover:text-grey ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b text-lg duration-300 ease-in md:translate-y-0 md:border-none md:text-md md:transition-colors",
+                    "transition-[color, transform] ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b border-grey-dark text-lg duration-300 ease-in hover:text-grey md:translate-y-0 md:border-none md:text-md md:transition-colors",
                     link.defaultClass,
                     isMenuOpen && "translate-y-0",
                   )}
