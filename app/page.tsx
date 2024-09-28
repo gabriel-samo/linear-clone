@@ -6,7 +6,7 @@ import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 
 export default function Home() {
   return (
-    <Container className="pt-[6.4rem]">
+    <Container className="overflow-hidden pt-[6.4rem]">
       <Hero>
         <Button
           className="animate-fade-in"
