@@ -10,7 +10,7 @@ const generateRandomNumber = (min: number, max: number) => {
 
 interface Line {
   id: string;
-  direction: "to right" | "to bottom";
+  direction: "to top" | "to left";
   size: number;
   duration: number;
 }
@@ -32,9 +32,9 @@ export const HeroImage = () => {
         setLines((lines) => [
           ...lines,
           {
-            direction: Math.random() > 0.5 ? "to bottom" : "to right",
-            duration: generateRandomNumber(1300, 3500),
-            size: generateRandomNumber(10, 30),
+            direction: Math.random() > 0.5 ? "to top" : "to left",
+            duration: generateRandomNumber(500, 2500),
+            size: generateRandomNumber(5, 20),
             id: Math.random().toString(36).substring(7),
           },
         ]);
@@ -54,11 +54,10 @@ export const HeroImage = () => {
     <div ref={ref} className="mt-[12.8rem] [perspective:2000px]">
       <div
         className={classNames(
-          "bg-hero-gradient relative rounded-lg border border-transparent-white bg-white bg-opacity-[0.01]",
-          inView
-            ? "animate-image-rotate before:animate-image-glow"
-            : "[transform:rotateX(25deg)]",
-          "before:bg-hero-glow before:absolute before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(120px)]",
+          "relative rounded-lg border border-transparent-white bg-white bg-opacity-[0.01] bg-hero-gradient",
+          inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
+          "before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
+          inView && "before:animate-image-glow",
         )}
       >
         <div className="absolute left-0 top-0 z-20 h-full w-full">
@@ -73,11 +72,11 @@ export const HeroImage = () => {
                 } as CSSProperties
               }
               className={classNames(
-                "bg-glow-lines absolute top-0 block",
-                line.direction === "to right" &&
-                  `animate-glow-line-horizontal left-0 h-[1px] w-[calc(var(--size)*1rem)]`,
-                line.direction === "to bottom" &&
-                  `animate-glow-line-vertical right-0 h-[calc(var(--size)*1rem)] w-[1px]`,
+                "absolute top-0 block bg-glow-lines",
+                line.direction === "to left" &&
+                  `left-0 h-[1px] w-[calc(var(--size)*0.5rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*1rem)]`,
+                line.direction === "to top" &&
+                  `right-0 h-[calc(var(--size)*0.5rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]`,
               )}
             />
           ))}
@@ -86,7 +85,7 @@ export const HeroImage = () => {
         <svg
           className={classNames(
             "absolute left-0 top-0 h-full w-full",
-            "[&_path]:stroke-white [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1] [&_path]:[strokeOpacity:0.2]",
+            "[&_path]:stroke-white [&_path]:[stroke-dasharray:0.1] [&_path]:[stroke-dashoffset:0.1] [&_path]:[strokeOpacity:0.2]",
             inView && "[&_path]:animate-sketch-lines",
           )}
           width="100%"
