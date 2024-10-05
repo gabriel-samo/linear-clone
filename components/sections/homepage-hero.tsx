@@ -1,6 +1,6 @@
 import { HeroImage } from "@/components/hero-image";
 import { ChevronIcon } from "@/components/icons/chevron";
-import { Button, IconWrapper } from "@/components/button";
+import { Button, Highlight } from "@/components/button";
 import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 
 export const HomepageHero = () => {
@@ -12,7 +12,7 @@ export const HomepageHero = () => {
         size="small"
         href="/"
       >
-        Linear 2022 Release - Build for scale <IconWrapper>→</IconWrapper>
+        Linear 2022 Release - Build for scale <Highlight>→</Highlight>
       </Button>
       <HeroTitle className="translate-y-[-1rem] animate-fade-in tracking-tighter opacity-0 [--animation-delay:200ms]">
         Linears is the better way
@@ -30,9 +30,9 @@ export const HomepageHero = () => {
         href="/"
       >
         Get Started{" "}
-        <IconWrapper>
+        <Highlight>
           <ChevronIcon />
-        </IconWrapper>
+        </Highlight>
       </Button>
       <HeroImage />
     </Hero>
