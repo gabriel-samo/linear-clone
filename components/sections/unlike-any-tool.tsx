@@ -1,6 +1,7 @@
 import { Container } from "@/components/container";
 import { Button, Highlight } from "@/components/button";
 import { ZapIllustration } from "@/components/illustrations/zap";
+import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 import { LogoLightIllustration } from "@/components/illustrations/logo-light";
 
 export const UnlikeAnyTool = () => {
@@ -21,6 +22,7 @@ export const UnlikeAnyTool = () => {
       <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
         <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 pb-12 md:flex-wrap md:overflow-hidden">
           <div className="flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(66.66%-12px)] md:p-14">
+            <KeyboardShortcuts />
             <p className="mb-4 text-3xl">Built for your keyboard</p>
             <p className="text-md text-primary-text">
               Fly through your tasks with rapid-fire keyboard shortcuts for
@@ -45,10 +47,10 @@ export const UnlikeAnyTool = () => {
               Comes with built-in workflows that create focus and routine.
             </p>
             <Button
-              href="/"
+              className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.4rem]"
               varient="secondary"
               size="small"
-              className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] px-1 opacity-0 transition-[transform,opacity] group-hover:translate-y-0 group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.1rem]"
+              href="/"
             >
               <Highlight>Linear Method</Highlight> Product Principles
               <svg
