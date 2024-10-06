@@ -16,7 +16,7 @@ const buttonVariants = cva("rounded-full inline-flex items-center", {
       ],
       secondary: [
         "text-off-white bg-white/10 border border-transparent-white backdrop-filter-[12px] hover:bg-white/20 transition-colors ease-in",
-        "[&_.highlight]:bg-transparent-white [&_.highlight]:rounded-full [&_.highlight]:px-2 [&_.highlight:last-child]:ml-2 [&_.highlight:last-child]:-mr-2 [&_.highlight:first-child]:ml-0 [&_.highlight:first-child]:mr-2",
+        "[&_.highlight]:bg-transparent-white [&_.highlight]:rounded-full [&_.highlight]:px-2 [&_.highlight:last-child]:ml-2 [&_.highlight:last-child]:-mr-2 [&_.highlight:first-child]:-ml-2 [&_.highlight:first-child]:mr-2",
       ],
       tertiary: "",
     },
