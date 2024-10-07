@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cva, VariantProps } from "class-variance-authority";
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import classNames from "classnames";
 
 type ButtonBaseProps = VariantProps<typeof buttonVariants> & {
   children: React.ReactNode;
@@ -42,8 +43,14 @@ const buttonVariants = cva("rounded-full inline-flex items-center", {
   },
 });
 
-export const Highlight = ({ children }: { children: React.ReactNode }) => {
-  return <span className="highlight">{children}</span>;
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <span className={classNames("highlight", className)}>{children}</span>;
 };
 
 export const Button = ({
