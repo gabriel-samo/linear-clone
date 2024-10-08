@@ -1,3 +1,4 @@
+"use client";
 import { Features } from "@/components/features";
 import {
   AutomatedBacklogIcon,
@@ -10,15 +11,17 @@ import {
 
 export const EnjoyIssueTracking = () => {
   return (
-    <Features color="194,97,254">
-      <Features.Title>
-        Issue tracking
-        <br />
-        you'll enjoy using
-      </Features.Title>
+    <Features color="194,97,254" colorDark="53,42,79">
       <Features.Main
         image="/img/issues.webp"
         text="Create tasks in seconds, discuss issues in context, and breeze through your work in views tailored to you and your team."
+        title={
+          <>
+            Issue tracking
+            <br />
+            you'll enjoy using
+          </>
+        }
       />
       <Features.Grid
         features={[
@@ -54,7 +57,7 @@ export const EnjoyIssueTracking = () => {
           },
         ]}
       />
-      <Features.Card
+      <Features.Cards
         features={[
           {
             image: "/img/card-board.webp",

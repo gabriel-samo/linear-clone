@@ -6,6 +6,8 @@ import { StarsIllustration } from "@/components/icons/stars";
 import { HomepageHero } from "@/components/sections/homepage-hero";
 import { UnlikeAnyTool } from "@/components/sections/unlike-any-tool";
 import { EnjoyIssueTracking } from "@/components/sections/enjoy-issue-tracking";
+import { BuildMomentum } from "@/components/sections/build-momentum";
+import { SetDirection } from "@/components/sections/set-direction";
 
 export default function Home() {
   return (
@@ -29,10 +31,11 @@ export default function Home() {
         </div>
 
         <UnlikeAnyTool />
-        <div className="my-[25.2rem]">
-          <EnjoyIssueTracking />
-        </div>
       </Container>
+
+      <EnjoyIssueTracking />
+      <BuildMomentum />
+      <SetDirection />
     </>
   );
 }

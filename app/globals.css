@@ -70,6 +70,27 @@
     );
   }
 
+  .feature-top-before {
+    background-image: conic-gradient(
+        from 90deg at 80% 50%,
+        #000212,
+        rgb(var(--feature-color-dark))
+      ),
+      conic-gradient(
+        from 270deg at 20% 50%,
+        rgb(var(--feature-color-dark)),
+        #000212
+      );
+    mask: radial-gradient(100% 50% at center center, black, transparent);
+    background-position:
+      1% 0%,
+      99% 0%;
+    background-size:
+      50% 100%,
+      50% 100%;
+    background-repeat: no-repeat;
+  }
+
   .feature-before {
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),

@@ -70,6 +70,8 @@ const config: Config = {
       "glass-gradient":
         "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)",
       "feature-gradient":
+        "radial-gradient(ellipse 100% 40% at 50% 60%,rgba(var(--feature-color),0.1),transparent)",
+      "feature-card-gradient":
         "radial-gradient(ellipse at center,rgba(var(--feature-color),0.15),transparent)",
     },
     boxShadow: {
