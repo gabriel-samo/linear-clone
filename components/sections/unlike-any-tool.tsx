@@ -20,35 +20,38 @@ export const UnlikeAnyTool = () => {
           </p>
         </div>
       </Container>
-      <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
-        <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 pb-12 md:flex-wrap md:overflow-hidden">
-          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
+
+      <div className="h-[48rem] overflow-hidden transition lg:h-auto lg:overflow-auto">
+        <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 pb-12 lg:flex-wrap lg:overflow-hidden">
+          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center lg:max-w-[calc(66.66%-12px)] lg:basis-[calc(66.66%-12px)] lg:p-14">
             <KeyboardShortcuts />
-            <p className="mb-4 text-3xl">Built for your keyboard</p>
+            <p className="mb-4 text-2xl xl:text-3xl">Built for your keyboard</p>
             <p className="text-md text-primary-text">
               Fly through your tasks with rapid-fire keyboard shortcuts for
               everything. Literally everything.
             </p>
           </div>
-          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
+          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center lg:basis-[calc(33.33%-12px)] lg:p-14">
             <div className="mask-linear-faded absolute top-[-9.2rem]">
               <ZapIllustration />
             </div>
-            <p className="mb-4 text-3xl">Breathtakingly fast</p>
+            <p className="mb-4 text-2xl xl:text-3xl">Breathtakingly fast</p>
             <p className="text-md text-primary-text">
               Built for speed with 50ms interactions and real-time sync.
             </p>
           </div>
-          <div className="group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
+          <div className="group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center lg:basis-[calc(33.33%-12px)] lg:p-14">
             <div className="pointer-events-none absolute top-[-8rem] flex w-[130%] justify-center">
               <LogoLightIllustration />
             </div>
-            <p className="mb-4 text-3xl">Designed for modern software teams</p>
+            <p className="mb-4 text-2xl xl:text-3xl">
+              Designed for modern software teams
+            </p>
             <p className="text-md text-primary-text">
               Comes with built-in workflows that create focus and routine.
             </p>
             <Button
-              className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.4rem]"
+              className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition-all group-hover:transform-none group-hover:opacity-100 md:bottom-[25rem] [&_.highlight]:text-[1.4rem]"
               varient="secondary"
               size="small"
               href="/"
@@ -65,10 +68,12 @@ export const UnlikeAnyTool = () => {
               </svg>
             </Button>
           </div>
-          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-start overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
+          <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-start overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center lg:max-w-[calc(66.66%-12px)] lg:basis-[calc(66.66%-12px)] lg:p-14">
             <CommandMenu />
             <div className="transition-opacity md:[.opened+&]:opacity-0">
-              <p className="mb-4 text-3xl">Meet your command line</p>
+              <p className="mb-4 text-2xl xl:text-3xl">
+                Meet your command line
+              </p>
               <p className="text-md text-primary-text">
                 Complete any action in seconds with the global command menu.
               </p>

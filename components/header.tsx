@@ -67,60 +67,62 @@ export const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed left-0 top-0 z-10 w-full border-b border-transparent-white backdrop-blur-[12px]">
-      <Container className="flex h-nav-height">
-        <Link className="flex items-center text-lg" href="/">
-          <Logo className="mr-4 size-[1.8rem]" />
-          Lienar
-        </Link>
+    <header className="fixed left-0 top-0 z-10 w-full backdrop-blur-[12px]">
+      <div className="mx-auto w-fit border-b border-transparent-white">
+        <Container className="flex h-nav-height">
+          <Link className="flex items-center text-lg" href="/">
+            <Logo className="mr-4 size-[1.8rem]" />
+            Lienar
+          </Link>
 
-        <div
-          className={classNames(
-            "transition-[visibility] md:visible",
-            isMenuOpen ? "visible" : "invisible delay-500",
-          )}
-        >
-          <nav
+          <div
             className={classNames(
-              "fixed left-0 top-nav-height h-[calc(100vh_-_var(--nav-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:bg-transparent md:opacity-100 md:transition-none",
-              isMenuOpen
-                ? "translate-x-0 opacity-100"
-                : "translate-x-[-100vw] opacity-0",
+              "transition-[visibility] md:visible",
+              isMenuOpen ? "visible" : "invisible delay-500",
             )}
           >
-            <ul className="flex h-full flex-col md:flex-row md:items-center">
-              {/* <ul className="flex items-center h-full [&_a]:text-md [&_a:hover]:text-grey [&_a]:transition-colors [&_li]:ml-6"> */}
-              {links.map((link, index) => (
-                <li
-                  key={index}
-                  className={classNames(
-                    "transition-[color, transform] ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b border-grey-dark text-lg duration-300 ease-in hover:text-grey md:translate-y-0 md:border-none md:text-md md:transition-colors",
-                    link.defaultClass,
-                    isMenuOpen && "translate-y-0",
-                  )}
-                >
-                  <Link href={link.href}>{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+            <nav
+              className={classNames(
+                "fixed left-0 top-nav-height h-[calc(100vh_-_var(--nav-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:bg-transparent md:opacity-100 md:transition-none",
+                isMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-[-100vw] opacity-0",
+              )}
+            >
+              <ul className="flex h-full flex-col md:flex-row md:items-center">
+                {/* <ul className="flex items-center h-full [&_a]:text-md [&_a:hover]:text-grey [&_a]:transition-colors [&_li]:ml-6"> */}
+                {links.map((link, index) => (
+                  <li
+                    key={index}
+                    className={classNames(
+                      "transition-[color, transform] ml-6 flex min-h-nav-height w-full translate-y-8 items-center border-b border-grey-dark text-lg duration-300 ease-in hover:text-grey md:translate-y-0 md:border-none md:text-md md:transition-colors",
+                      link.defaultClass,
+                      isMenuOpen && "translate-y-0",
+                    )}
+                  >
+                    <Link href={link.href}>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
-        <div className="ml-auto flex h-full items-center">
-          <Link href="/#" className="mr-6 text-md">
-            Log in
-          </Link>
-          <Button href="/#">Sign up</Button>
-        </div>
+          <div className="ml-auto flex h-full items-center">
+            <Link href="/#" className="mr-6 text-md">
+              Log in
+            </Link>
+            <Button href="/#">Sign up</Button>
+          </div>
 
-        <button
-          className="ml-6 md:hidden"
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          <span className="sr-only">Toggle menu</span>
-          <HamburgerIcon />
-        </button>
-      </Container>
+          <button
+            className="ml-6 md:hidden"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span className="sr-only">Toggle menu</span>
+            <HamburgerIcon />
+          </button>
+        </Container>
+      </div>
     </header>
   );
 };
