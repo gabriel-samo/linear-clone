@@ -69,6 +69,8 @@ const config: Config = {
         "radial-gradient(circle at bottom center,var(--color),transparent 70%)",
       "glass-gradient":
         "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)",
+      "feature-gradient":
+        "radial-gradient(ellipse at center,rgba(var(--feature-color),0.15),transparent)",
     },
     boxShadow: {
       primary: "rgb(80 63 205 / 50%) 0px 1px 40px",

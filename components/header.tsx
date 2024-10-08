@@ -67,7 +67,7 @@ export const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed left-0 top-0 z-10 w-full backdrop-blur-[12px]">
+    <header className="fixed left-0 top-0 z-20 w-full backdrop-blur-[12px]">
       <div className="mx-auto w-fit border-b border-transparent-white">
         <Container className="flex h-nav-height">
           <Link className="flex items-center text-lg" href="/">

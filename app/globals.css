@@ -69,4 +69,28 @@
       transparent 100%
     );
   }
+
+  .feature-before {
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0) 120%
+    );
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: xor;
+    border-radius: inherit;
+    padding: 1px;
+  }
+
+  .feature-after {
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-mask: linear-gradient(black, transparent);
+    mask: linear-gradient(black, transparent);
+    border-radius: inherit;
+  }
 }
