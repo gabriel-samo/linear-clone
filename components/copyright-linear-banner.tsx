@@ -14,7 +14,7 @@ export const CopyrightLinearBanner = () => {
     if (!isCookieBannerDismissed) {
       setIsCookieBannerVisible(true);
     }
-  });
+  }, []);
 
   const dismissCookie = () => {
     setIsCookieBannerVisible(false);
@@ -30,13 +30,13 @@ export const CopyrightLinearBanner = () => {
           <strong>⚠️ NOTE:</strong> I am not affiliated with Linear in any way.
           All images, the name of Linear and their logo are copyrighted by
           Linear. This website is only intended for learning purposes and as a
-          homage to Linear's great UI work 🙏
+          homage to Linear&apos;s great UI work 🙏
           <br />
           This is linear 2022 version.
         </p>
         <p>
           <Button href="https://linear.app" size="large" target="_blank">
-            Visit Linear's website
+            Visit Linear&apos;s website
           </Button>
         </p>
       </div>
