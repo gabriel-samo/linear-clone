@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { AnalyticsWrapper } from "@/components/analytics";
+import { CopyrightLinearBanner } from "@/components/copyright-linear-banner";
 
 export const runtime = "edge";
 
@@ -27,7 +29,9 @@ export default function RootLayout({
           <Header />
           <main className="bg-page-gradient pt-nav-height">{children} </main>
           <Footer />
+          <CopyrightLinearBanner />
         </div>
+        <AnalyticsWrapper />
       </body>
     </html>
   );
