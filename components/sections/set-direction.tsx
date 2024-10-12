@@ -1,6 +1,9 @@
 "use client";
 
-import { Features } from "../features";
+import { Features } from "@/components/features";
+import roadmapImage from "@/public/img/roadmap.webp";
+import cardUpdatesImage from "@/public/img/card-updates.webp";
+import cardRoadmapsImage from "@/public/img/card-roadmaps.webp";
 import {
   AutomatedBacklogIcon,
   CustomViewsIcon,
@@ -8,7 +11,7 @@ import {
   IssuesIcon,
   ParentSubIcon,
   WorkflowsIcon,
-} from "../icons/features";
+} from "@/components/icons/features";
 
 export const SetDirection = () => {
   return (
@@ -21,7 +24,7 @@ export const SetDirection = () => {
             with Roadmaps
           </>
         }
-        image="/img/roadmap.webp"
+        image={roadmapImage}
         imageSize="large"
         text="Plan visually, collaborate in cross-team projects, and make better decisions with progress insights and project updates."
       />
@@ -62,13 +65,13 @@ export const SetDirection = () => {
       <Features.Cards
         features={[
           {
-            image: "/img/card-updates.webp",
+            image: cardUpdatesImage,
             imageClassName: "top-[55%] md:top-[40%] w-full left-[7%]",
             title: "Project updates",
             text: "Keep everyone up-to-date on the health and progress of projects.",
           },
           {
-            image: "/img/card-roadmaps.webp",
+            image: cardRoadmapsImage,
             imageClassName: "top-[55%] md:top-[40%] w-full left-[2%]",
             title: "Focus on the big picture",
             text: "Explore every company project in one view to easily identify what needs attention.",

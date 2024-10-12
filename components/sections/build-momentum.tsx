@@ -1,6 +1,7 @@
 "use client";
 
-import { Features } from "../features";
+import { Features } from "@/components/features";
+import cyclesImage from "@/public/img/cycles.webp";
 import {
   AutomatedBacklogIcon,
   CustomViewsIcon,
@@ -8,7 +9,7 @@ import {
   IssuesIcon,
   ParentSubIcon,
   WorkflowsIcon,
-} from "../icons/features";
+} from "@/components/icons/features";
 
 export const BuildMomentum = () => {
   return (
@@ -21,7 +22,7 @@ export const BuildMomentum = () => {
             with Cycles
           </>
         }
-        image="/img/cycles.webp"
+        image={cyclesImage}
         imageSize="large"
         text="Cycles focus your team on what work should happen next. A healthy routine to maintain velocity and make meaningful progress."
       />

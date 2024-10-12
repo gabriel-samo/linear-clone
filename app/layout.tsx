@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Container } from "@/components/container";
+
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Linear Clone",

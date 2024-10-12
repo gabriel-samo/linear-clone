@@ -1,5 +1,8 @@
 "use client";
 import { Features } from "@/components/features";
+import issuesImage from "@/public/img/issues.webp";
+import cardBoardImage from "@/public/img/card-board.webp";
+import cardViewsImage from "@/public/img/card-views.webp";
 import {
   AutomatedBacklogIcon,
   CustomViewsIcon,
@@ -13,13 +16,13 @@ export const EnjoyIssueTracking = () => {
   return (
     <Features color="194,97,254" colorDark="53,42,79">
       <Features.Main
-        image="/img/issues.webp"
+        image={issuesImage}
         text="Create tasks in seconds, discuss issues in context, and breeze through your work in views tailored to you and your team."
         title={
           <>
             Issue tracking
             <br />
-            you'll enjoy using
+            you&#39;ll enjoy using
           </>
         }
       />
@@ -60,13 +63,13 @@ export const EnjoyIssueTracking = () => {
       <Features.Cards
         features={[
           {
-            image: "/img/card-board.webp",
+            image: cardBoardImage,
             imageClassName: "top-[55%] md:top-[40%] w-[200%]",
             title: "List and board",
             text: "Switch between list and board layout to view work from any angle.",
           },
           {
-            image: "/img/card-views.webp",
+            image: cardViewsImage,
             imageClassName:
               "top-[45%] left-[12px] md:top-[34%] md:left-[24px] w-[110%]",
             title: "Make it yours",

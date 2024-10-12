@@ -31,7 +31,7 @@ export const KeyboardShortcuts = () => {
   useEffect(() => {
     scheduleTimeout();
     return () => clearTimeout(timeoutRef.current);
-  }, []);
+  });
 
   const goToShortcut = (index: number) => {
     clearTimeout(timeoutRef.current);

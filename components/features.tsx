@@ -1,6 +1,8 @@
 "use client";
 
 import classNames from "classnames";
+import Image, { type StaticImageData } from "next/image";
+
 import { Container } from "@/components/container";
 import { useInView } from "react-intersection-observer";
 
@@ -10,8 +12,6 @@ type FeatureProps = {
   colorDark: string;
 };
 
-(" relative flex flex-col items-center overflow-x-clip before:pointer-events-none before:absolute before:h-[40rem] before:w-full before:bg-[conic-gradient(from_90deg_at_80%_50%,#000212,rgb(var(--feature-color-dark))),conic-gradient(from_270deg_at_20%_50%,rgb(var(--feature-color-dark)),#000212)] before:bg-no-repeat before:transition-[transform,opacity] before:duration-1000 before:ease-in before:[mask:radial-gradient(100%_50%_at_center_center,_black,_transparent)] before:[background-size:50%_100%,50%_100%] before:[background-position:1%_0%,99%_0%] after:pointer-events-none after:absolute after:inset-0");
-
 export const Features = ({ children, color, colorDark }: FeatureProps) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
   return (
@@ -20,7 +20,7 @@ export const Features = ({ children, color, colorDark }: FeatureProps) => {
       className={classNames(
         "relative flex flex-col items-center overflow-x-clip",
         "before:feature-top-before before:pointer-events-none before:absolute before:h-[40rem] before:w-full before:transition-[transform,opacity] before:duration-1000 before:ease-in",
-        "after:bg-feature-gradient after:pointer-events-none after:absolute after:inset-0",
+        "after:pointer-events-none after:absolute after:inset-0 after:bg-feature-gradient",
         inView
           ? "is-visible before:opacity-100 before:[transform:rotate(180deg)_scale(2)]"
           : "before:rotate-180 before:opacity-40",
@@ -40,7 +40,7 @@ export const Features = ({ children, color, colorDark }: FeatureProps) => {
 };
 
 type MainFeatureProps = {
-  image: string;
+  image: StaticImageData;
   text: string;
   title: React.ReactNode;
   imageSize?: "small" | "large";
@@ -71,7 +71,7 @@ const MainFeatures = ({
               "after:feature-after after:pointer-events-none after:absolute after:inset-0",
             )}
           >
-            <img src={image} className="h-auto w-full" />
+            <Image src={image} alt="" className="h-auto w-full" />
           </div>
         </Container>
       </div>
@@ -113,7 +113,7 @@ const FeatureGrid = ({ features }: FeatureGridProps) => {
 
 type FeatureCardProps = {
   features: {
-    image: string;
+    image: StaticImageData;
     imageClassName: string;
     title: string;
     text: string;
@@ -127,11 +127,11 @@ const FeatureCards = ({ features }: FeatureCardProps) => {
         {features.map(({ title, text, image, imageClassName }) => (
           <div
             key={title}
-            className="bg-feature-card-gradient relative aspect-[1.1/1] overflow-hidden rounded-[2.4rem] border border-transparent-white px-8 py-6 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient md:rounded-[4.8rem] md:p-14"
+            className="relative aspect-[1.1/1] overflow-hidden rounded-[2.4rem] border border-transparent-white bg-feature-card-gradient px-8 py-6 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient md:rounded-[4.8rem] md:p-14"
           >
             <h3 className="mb-2 text-2xl text-white">{title}</h3>
             <p className="max-w-[31rem] text-md text-primary-text">{text}</p>
-            <img
+            <Image
               src={image}
               alt={title}
               className={classNames("absolute max-w-none", imageClassName)}

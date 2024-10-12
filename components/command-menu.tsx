@@ -109,7 +109,8 @@ export const CommandMenu = () => {
   useEffect(() => {
     if (!commandMenuRef.current) return;
     commandMenuRef.current.classList.remove("animate-bounce");
-    commandMenuRef.current.clientWidth;
+    // Force reflow to restart the animation
+    void commandMenuRef.current.offsetWidth;
     commandMenuRef.current.classList.add("animate-bounce");
   }, [selectedOption]);
 

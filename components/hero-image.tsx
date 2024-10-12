@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
 import { CSSProperties, useEffect, useRef, useState } from "react";
+
+import heroImage from "@/public/img/hero.webp";
 
 const generateRandomNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -100,12 +103,12 @@ export const HeroImage = () => {
           <path pathLength="1" d="M538 777L538 128"></path>
         </svg>
 
-        <img
+        <Image
           className={classNames(
             "relative z-10 transition-opacity delay-[680ms]",
             inView ? "opacity-100" : "opacity-0",
           )}
-          src="/img/hero.webp"
+          src={heroImage}
           alt="Hero image"
         />
       </div>
